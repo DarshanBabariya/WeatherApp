@@ -38,7 +38,7 @@ body{
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(to bottom right, #00feef,#09ebee,#19ceeb,#28acea, #388ee9,#3d76e0);
+  background-image: linear-gradient(to bottom right, #00feef,#19ceeb,#28acea, #388ee9,#3d76e0);
   background-size: 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
