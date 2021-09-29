@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Serif&display=swap" rel="stylesheet">
+
+    <title>Weather App</title>
+
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container" id="weather-main">
+
+        <!-- wawe-upper -->
+        <div class="custom-shape-divider-bottom-1631388340">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- weather-data -->
+        <div class="text-center weather-card">
+            <div class="card-body"><br><br>
+                <h1 class="card-title">WEATHER APP</h1>
+                <p class="card-text" id="date">WED | OCT 23 | 9:20 AM</p><br>
+                <i class="fa fa-street-view"> <%= data.name  %>  | <%= data.sys.country  %> </i>
+
+                <div id="weathercon">
+                    <% if(data.weather[0].main == "Clouds") { %> 
+                    <marquee><i class="fa fa-cloud"></i> &nbsp; &nbsp; &nbsp; <i class="fa fa-cloud"></i> &nbsp; &nbsp; &nbsp; <i class="fa fa-cloud"></i></marquee>
+                    <% } else if(data.weather[0].main == "Sunny") { %> 
+                    <i class="fas fa-sun"></i>
+                    <% } else if(data.weather[0].main == "Rain") { %> 
+                        <marquee><i class="fas fa-cloud-showers-heavy"></i> &nbsp; &nbsp; &nbsp; <i class="fas fa-cloud-showers-heavy"></i> &nbsp; &nbsp; &nbsp; <i class="fas fa-cloud-showers-heavy"></i></marquee>
+                    <% } else { %> 
+                        <i class="fa fa-snowflake-o"></i>
+                    <% } %> 
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12 temp-main">
+                            <h2><%= temp.maintemp  %> <sup>°C</sup></h2>
+                            <p class="fa fa-thumb-tack" id="enviro"> <%= data.weather[0].main  %> </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 temp-detail">
+                            <div class="min-temp">
+                                <h3> <span class="fa fa-thermometer-1"> &nbsp; Min. &nbsp;
+                                    </span><%= temp.tempmin  %> <sup>°C</sup></h3>
+                            </div>
+                            <div class="max-temp">
+                                <h3> <span class="fa fa-thermometer-full"> &nbsp; Max. &nbsp;
+                                    </span><%= temp.tempmax  %> <sup>°C</sup></h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12"><br>
+                            <div class="alert alert-primary" role="alert" title="Wind - Speed | Degree">
+                                <i class="fas fa-wind"> <%= data.wind.speed  %>  km/h | <%= data.wind.deg  %> °</i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12"><br>
+                            <div class="alert alert-primary" role="alert" title="Pressure | Humidity">
+                                <i class="fas fa-tint"> <%= data.main.pressure  %>  PA | <%= data.main.humidity  %>  m<sup>3</sup></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+
+            </div>
+        </div>
+
+        <!-- wave-lower -->
+        <div class="custom-shape-divider-top-1631390674">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 50px;">
+        <p class="text-center text-dark">Designed & Developed by, <b class="text-dark">Darshan Babariya</b></p>
+
+    </div>
+
+    <script>
+        const curDateDay = document.getElementById("date");
+
+
+        const getcurrent = () => {
+
+            var days = new Array(7);
+            days[0] = "SUN";
+            days[1] = "MON";
+            days[2] = "TUE";
+            days[3] = "WED";
+            days[4] = "THU";
+            days[5] = "FRI";
+            days[6] = "SAT";
+
+            var month = new Array(12);
+            month[0] = "JAN";
+            month[1] = "FEB";
+            month[2] = "MAR";
+            month[3] = "APR";
+            month[4] = "MAY";
+            month[5] = "JUN";
+            month[6] = "JLY";
+            month[7] = "AUG";
+            month[8] = "SPT";
+            month[9] = "OCT";
+            month[10] = "NOV";
+            month[11] = "DEC";
+
+            let currentTime = new Date();
+            var curday = days[currentTime.getDay()];
+            var curdate = currentTime.getDate();
+            var curmonth = month[currentTime.getMonth()];
+            var curyear = currentTime.getFullYear();
+            var curtime = currentTime.getHours() + " : " + currentTime.getMinutes();
+
+            console.log(curday + " , " + curdate + " , " + curmonth + " , " + curyear);
+            curDateDay.innerHTML = curday + " | " + curdate + " " + curmonth + " " + curyear + " | " + curtime;
+        }
+        getcurrent();
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

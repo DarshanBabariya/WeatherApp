@@ -1,0 +1,345 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Noto Serif', serif;
+    cursor: default;
+}
+body {
+    width: 100%;
+    height: 150vh;
+    background-color: #3d76e0;
+    background-image: linear-gradient(to bottom right, #00feef,#09ebee,#19ceeb,#28acea, #388ee9,#3d76e0);
+}
+/* wave-lower */
+.custom-shape-divider-top-1631390674 {
+
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.custom-shape-divider-top-1631390674 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 136px;
+    transform: rotateY(180deg);
+}
+.custom-shape-divider-top-1631390674 .shape-fill {
+    fill: #FFFFFF;
+}
+/* wave-upper */
+.custom-shape-divider-bottom-1631388340 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1631388340 svg {
+    position: relative;
+    display: block;
+    width: calc(102% + 1.3px);
+    height: 145px;
+    transform: rotateY(180deg);
+}
+.custom-shape-divider-bottom-1631388340 .shape-fill {
+    fill: #FFF;;
+}
+.weather-card {
+    background-color: #FFF;
+    border-left: 12px solid #334257;
+    border-right: 12px solid #334257;
+    border-radius: 100px;
+}
+.weather-card .card-body h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3em;
+    letter-spacing: 1px;
+    color: #334257;
+    text-shadow: 3px 1px 1px #88fff7;
+    text-align: center;
+}
+.weather-card .card-body p {
+    margin-bottom: 0px !important;
+    color: #334257;
+}
+.weather-card .card-body i{
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    color: #334257;
+}
+.weather-card .row {
+width: 50%;
+}
+.temp-main h2{
+    font-size: 5em;
+    color: #388ee9;
+    text-shadow: 2px 1px 1px #334257;
+}
+.temp-main h2 sup {
+    font-size: .5em;
+}
+.temp-main p{
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #334257;
+}
+.temp-detail {
+    padding: 30px;
+    text-align: left !important;
+}
+.max-temp h3 ,.min-temp h3 {
+    font-size: 1.2em;
+    color: #388ee9;
+}
+.max-temp h3 span,.min-temp h3 span{ 
+    color: #334257;
+}
+#weathercon marquee {
+    width: 30%;
+    border-radius: 50%;
+}
+#weathercon i {
+    font-size: 5em;
+    padding: 30px 0px;
+}
+#weathercon .fa-sun {
+    color: #ffe600;
+    text-shadow: 3px 1px 1px #df8703;
+    animation: changecolorfrd 2s infinite;
+}
+@keyframes changecolorfrd{
+    0%{transform: scale(.5);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(1.5);}
+} 
+#weathercon .fa-cloud, #weathercon .fa-cloud-showers-heavy {
+    color: aquamarine;
+    text-shadow: 5px 1px 1px aqua;
+}
+#weathercon .fa-snowflake-o {
+    color: aqua;
+    text-shadow: 3px 1px 1px #388ee9;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.alert-primary {
+    padding: 5px !important;
+}
+/*****      EXTRA LARGE DEVICE ONLY         *****/
+@media (min-width: 1200px) {
+
+}
+/*****      LARGE DEVICE ONLY           *****/
+@media (min-width: 992px) and (max-width: 1199.99px) {
+    .weather-card {
+        border-left: 10px solid #334257;
+        border-right: 10px solid #334257;
+        border-radius: 100px;
+    }
+    .weather-card .card-body h1 {
+        font-size: 3em;
+        text-shadow: 3px 1px 1px #88fff7;
+    }
+    .weather-card .card-body i{
+        font-size: 1.2em;
+    } 
+    .weather-card .row {
+    width: 50%;
+    }
+    .temp-main h2{
+        font-size: 4em;
+        text-shadow: 2px 1px 1px #334257;
+    }
+    .temp-main h2 sup {
+        font-size: .5em;
+    }
+    .temp-main p{
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .temp-detail {
+        padding: 30px;
+        text-align: left !important;
+    }
+    .max-temp h3 ,.min-temp h3 {
+        font-size: 1.2em;
+    }
+    #weathercon marquee {
+        width: 40%;
+        border-radius: 50%;
+    }
+    #weathercon i {
+        font-size: 4em;
+        padding: 30px 0px;
+    }
+}
+/*****      MEDIUM DEVICE ONLY          *****/
+@media (min-width: 768px) and (max-width: 991.99px) {
+    .weather-card {
+        border-left: 8px solid #334257;
+        border-right: 8px solid #334257;
+        border-radius: 100px;
+    }
+    .weather-card .card-body h1 {
+        font-size: 2.5em;
+        text-shadow: 2px 1px 1px #88fff7;
+    }
+    .weather-card .card-body i{
+        font-size: 1.2em;
+    } 
+    .weather-card .row {
+    width: 60%;
+    }
+    .temp-main h2{
+        font-size: 3.5em;
+        text-shadow: 2px 1px 1px #334257;
+    }
+    .temp-main h2 sup {
+        font-size: .4em;
+    }
+    .temp-main p{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .temp-detail {
+        padding: 30px;
+        text-align: left !important;
+    }
+    .max-temp h3 ,.min-temp h3 {
+        font-size: 1.1em;
+    }
+    #weathercon marquee {
+        width: 50%;
+        border-radius: 50%;
+    }
+    #weathercon i {
+        font-size: 4em;
+        padding: 30px 0px;
+    }
+}
+/*****      SMALL DEVICE ONLY       *****/
+@media (min-width: 576px) and (max-width: 767.99px) {
+    .weather-card {
+        border-left: 5px solid #334257;
+        border-right: 5px solid #334257;
+        border-radius: 100px;
+    }
+    .weather-card .card-body h1 {
+        font-size: 2em;
+        text-shadow: 2px 1px 1px #88fff7;
+    }
+    .weather-card .card-text {
+        font-size: 14px;
+    }
+    .weather-card .card-body i{
+        font-size: 1em;
+    } 
+    .weather-card .row {
+    width: 60%;
+    }
+    .temp-main h2{
+        font-size: 3.5em;
+        text-shadow: 2px 1px 1px #334257;
+    }
+    .temp-main h2 sup {
+        font-size: .4em;
+    }
+    .temp-main p{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .temp-detail {
+        padding: 30px;
+        text-align: center !important;
+    }
+    .max-temp h3 ,.min-temp h3 {
+        font-size: 1.1em;
+    }
+    #weathercon marquee {
+        width: 50%;
+        border-radius: 50%;
+    }
+    #weathercon i {
+        font-size: 4em;
+        padding: 30px 0px;
+    }
+}
+/*****      EXTRA SUPER SMALL DEVICE ONLY       *****/
+@media (max-width: 575.99px) {
+    .weather-card {
+        border-left: 3px solid #334257;
+        border-right: 3px solid #334257;
+        border-radius: 100px;
+    }
+    .weather-card .card-body h1 {
+        font-size: 1.5em;
+        text-shadow: 1px 1px 1px #88fff7;
+    }
+    .weather-card .card-text {
+        font-size: 10px;
+    }
+    .weather-card .card-body i{
+        font-size: .9em;
+    } 
+    .weather-card .row {
+    width: 100%;
+    }
+    .temp-main h2{
+        font-size: 3.5em;
+        text-shadow: 2px 1px 1px #334257;
+    }
+    .temp-main h2 sup {
+        font-size: .4em;
+    }
+    .temp-main p{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .temp-detail {
+        padding: 30px;
+        text-align: center !important;
+    }
+    .max-temp h3 ,.min-temp h3 {
+        font-size: 1em;
+    }
+    #weathercon marquee {
+        width: 70%;
+        border-radius: 50%;
+    }
+    #weathercon i {
+        font-size: 4em;
+        padding: 30px 0px;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .custom-shape-divider-bottom-1631388340 svg {
+        height: 100px;  
+    }
+    .custom-shape-divider-top-1631390674 svg { 
+        height: 100px;
+    }
+    .alert-primary {
+        padding: 5px !important;
+        margin: 2px 50px;
+    }
+    
+}
